@@ -46,7 +46,9 @@ void TcpServer::SocketListen(){
 
     // loop to keep server alive and handel incoming connections
     while(1){
-        int incomingSocket = accept(serverSocket, NULL, NULL); // accept incoming socket connection on our serverSocket 
+        sockaddr_in client_address;
+        socklen_t client_addr_len = sizeof(client_address);
+        int incomingSocket = accept(serverSocket, (struct sockaddr*)&client_address, &client_addr_len);
         if(incomingSocket < 0){
             // throw error 
             continue; // keep looping, only one connection failed
@@ -76,6 +78,11 @@ string TcpServer::handleRequest(int incomingSocket){
     if(request.method == "GET"){
         return "GET METHOD DETECTED";
     }
+    return "NON GET METHOD";
+}
+
+TcpServer::~TcpServer(){
+    close(serverSocket);
 }
 
 
