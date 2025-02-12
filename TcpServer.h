@@ -7,6 +7,8 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
+#include "httpsRequest.h"
+
 
 class TcpServer {
 public:
@@ -21,7 +23,7 @@ public:
 
     void SocketListen();
 
-    void handleRequest(int);
+    string handleRequest(int);
 
     void closeRequest(int);
 };

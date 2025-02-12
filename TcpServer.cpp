@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "TcpServer.h"
+#include "httpsRequest.h"
 
 #include <cstring>
 #include <iostream>
@@ -43,16 +44,40 @@ void TcpServer::SocketListen(){
     }
 
 
-    // loop to keep server alive and handel income connections
+    // loop to keep server alive and handel incoming connections
     while(1){
         int incomingSocket = accept(serverSocket, NULL, NULL); // accept incoming socket connection on our serverSocket 
         if(incomingSocket < 0){
             // throw error 
             continue; // keep looping, only one connection failed
         }
-        handleRequest(incomingSocket);
-        closeRequest(incomingSocket);
+        const char* response = handleRequest(incomingSocket).c_str();
+        ssize_t bytes_sent = send(incomingSocket, response, strlen(response), 0);
 
+        if (bytes_sent < 0){
+            // throw error
+        }
+        closeRequest(incomingSocket);
     }
 }
+
+string TcpServer::handleRequest(int incomingSocket){
+    char buffer[1024] = {0};
+    ssize_t bytes_received = recv(incomingSocket, buffer, sizeof(buffer) - 1, 0);
+
+    if(bytes_received < 0){
+        // return error
+    } else {
+        buffer[bytes_received] = '\n';
+    }
+
+    HTTPS_Request request = HTTPS_Request(buffer);
+
+    if(request.method == "GET"){
+        return "GET METHOD DETECTED";
+    }
+}
+
+
+
 
