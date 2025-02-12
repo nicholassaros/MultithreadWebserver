@@ -57,7 +57,7 @@ void TcpServer::SocketListen(){
         if (bytes_sent < 0){
             // throw error
         }
-        closeRequest(incomingSocket);
+        close(incomingSocket);
     }
 }
 
@@ -77,6 +77,9 @@ string TcpServer::handleRequest(int incomingSocket){
         return "GET METHOD DETECTED";
     }
 }
+
+
+
 
 
 

@@ -24,8 +24,6 @@ public:
     void SocketListen();
 
     string handleRequest(int);
-
-    void closeRequest(int);
 };
 
 #endif
