@@ -14,11 +14,12 @@ using namespace std;
 
 
 
-TcpServer::TcpServer(int port_num){
+TcpServer::TcpServer(int _port_num){
     serverAddress.sin_family = AF_INET; // specifies IPV4
-    serverAddress.sin_port = htons(port_num); // delcare port num and host to network byte order
+    serverAddress.sin_port = htons(_port_num); // delcare port num and host to network byte order
     serverAddress.sin_addr.s_addr = INADDR_ANY; // listens to all avaliable IP
     
+    port_num = _port_num;
     SocketStart();
 };
 
@@ -42,10 +43,13 @@ void TcpServer::SocketListen(){
     if(listen(serverSocket,MAX_CONNECT) < 0 ){
         // throw error
     }
+    printf("Listenting over port %d... \n", port_num);
+
 
 
     // loop to keep server alive and handel incoming connections
-    while(1){
+    while(true){
+        cout << "Waiting for client connection... \n";
         sockaddr_in client_address;
         socklen_t client_addr_len = sizeof(client_address);
         int incomingSocket = accept(serverSocket, (struct sockaddr*)&client_address, &client_addr_len);

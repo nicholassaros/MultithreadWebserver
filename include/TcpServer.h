@@ -14,6 +14,7 @@ class TcpServer {
 public:
     sockaddr_in serverAddress;
     int serverSocket;
+    int port_num;
     const int MAX_CONNECT = 20;
 
     TcpServer(int port_num);
