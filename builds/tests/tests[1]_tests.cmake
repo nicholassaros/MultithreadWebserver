@@ -1,0 +1,5 @@
+add_test([=[ExampleTest.SimpleAssertion]=]  /home/nicholas/OperatingSystems/MultithreadWebserver/builds/tests/tests [==[--gtest_filter=ExampleTest.SimpleAssertion]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[ExampleTest.SimpleAssertion]=]  PROPERTIES WORKING_DIRECTORY /home/nicholas/OperatingSystems/MultithreadWebserver/builds/tests SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[ExampleTest.SimpleAssertion1]=]  /home/nicholas/OperatingSystems/MultithreadWebserver/builds/tests/tests [==[--gtest_filter=ExampleTest.SimpleAssertion1]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[ExampleTest.SimpleAssertion1]=]  PROPERTIES WORKING_DIRECTORY /home/nicholas/OperatingSystems/MultithreadWebserver/builds/tests SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  tests_TESTS ExampleTest.SimpleAssertion ExampleTest.SimpleAssertion1)
