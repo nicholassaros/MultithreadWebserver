@@ -5,6 +5,11 @@ project(server)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+include_directories(include)
+
+set(SRC_FILES src/Server.cpp src/TcpServer.cpp)
+
+add_executable(server ${SRC_FILES})
 
 # Enable GTEST
 include(FetchContent)
@@ -14,10 +19,3 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 add_subdirectory(tests)
-
-
-include_directories(include)
-
-set(SRC_FILES src/Server.cpp src/TcpServer.cpp)
-
-add_executable(server ${SRC_FILES})

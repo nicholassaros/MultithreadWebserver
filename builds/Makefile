@@ -227,17 +227,17 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
-# Target rules for targets named tests
+# Target rules for targets named runTests
 
 # Build rule for target.
-tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests
-.PHONY : tests
+runTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 runTests
+.PHONY : runTests
 
 # fast build rule for target.
-tests/fast:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/build
-.PHONY : tests/fast
+runTests/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/runTests.dir/build.make tests/CMakeFiles/runTests.dir/build
+.PHONY : runTests/fast
 
 src/Server.o: src/Server.cpp.o
 .PHONY : src/Server.o
@@ -303,8 +303,8 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... runTests"
 	@echo "... server"
-	@echo "... tests"
 	@echo "... src/Server.o"
 	@echo "... src/Server.i"
 	@echo "... src/Server.s"

@@ -162,25 +162,49 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tests/CMakeFiles/tests.dir/rule:
-	cd /home/nicholas/OperatingSystems/MultithreadWebserver/builds && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/tests.dir/rule
-.PHONY : tests/CMakeFiles/tests.dir/rule
+tests/CMakeFiles/runTests.dir/rule:
+	cd /home/nicholas/OperatingSystems/MultithreadWebserver/builds && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/runTests.dir/rule
+.PHONY : tests/CMakeFiles/runTests.dir/rule
 
 # Convenience name for target.
-tests: tests/CMakeFiles/tests.dir/rule
-.PHONY : tests
+runTests: tests/CMakeFiles/runTests.dir/rule
+.PHONY : runTests
 
 # fast build rule for target.
-tests/fast:
-	cd /home/nicholas/OperatingSystems/MultithreadWebserver/builds && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/build
-.PHONY : tests/fast
+runTests/fast:
+	cd /home/nicholas/OperatingSystems/MultithreadWebserver/builds && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/runTests.dir/build.make tests/CMakeFiles/runTests.dir/build
+.PHONY : runTests/fast
+
+__/src/TcpServer.o: __/src/TcpServer.cpp.o
+.PHONY : __/src/TcpServer.o
+
+# target to build an object file
+__/src/TcpServer.cpp.o:
+	cd /home/nicholas/OperatingSystems/MultithreadWebserver/builds && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/runTests.dir/build.make tests/CMakeFiles/runTests.dir/__/src/TcpServer.cpp.o
+.PHONY : __/src/TcpServer.cpp.o
+
+__/src/TcpServer.i: __/src/TcpServer.cpp.i
+.PHONY : __/src/TcpServer.i
+
+# target to preprocess a source file
+__/src/TcpServer.cpp.i:
+	cd /home/nicholas/OperatingSystems/MultithreadWebserver/builds && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/runTests.dir/build.make tests/CMakeFiles/runTests.dir/__/src/TcpServer.cpp.i
+.PHONY : __/src/TcpServer.cpp.i
+
+__/src/TcpServer.s: __/src/TcpServer.cpp.s
+.PHONY : __/src/TcpServer.s
+
+# target to generate assembly for a file
+__/src/TcpServer.cpp.s:
+	cd /home/nicholas/OperatingSystems/MultithreadWebserver/builds && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/runTests.dir/build.make tests/CMakeFiles/runTests.dir/__/src/TcpServer.cpp.s
+.PHONY : __/src/TcpServer.cpp.s
 
 test.o: test.cpp.o
 .PHONY : test.o
 
 # target to build an object file
 test.cpp.o:
-	cd /home/nicholas/OperatingSystems/MultithreadWebserver/builds && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test.cpp.o
+	cd /home/nicholas/OperatingSystems/MultithreadWebserver/builds && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/runTests.dir/build.make tests/CMakeFiles/runTests.dir/test.cpp.o
 .PHONY : test.cpp.o
 
 test.i: test.cpp.i
@@ -188,7 +212,7 @@ test.i: test.cpp.i
 
 # target to preprocess a source file
 test.cpp.i:
-	cd /home/nicholas/OperatingSystems/MultithreadWebserver/builds && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test.cpp.i
+	cd /home/nicholas/OperatingSystems/MultithreadWebserver/builds && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/runTests.dir/build.make tests/CMakeFiles/runTests.dir/test.cpp.i
 .PHONY : test.cpp.i
 
 test.s: test.cpp.s
@@ -196,7 +220,7 @@ test.s: test.cpp.s
 
 # target to generate assembly for a file
 test.cpp.s:
-	cd /home/nicholas/OperatingSystems/MultithreadWebserver/builds && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/test.cpp.s
+	cd /home/nicholas/OperatingSystems/MultithreadWebserver/builds && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/runTests.dir/build.make tests/CMakeFiles/runTests.dir/test.cpp.s
 .PHONY : test.cpp.s
 
 # Help Target
@@ -211,7 +235,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... tests"
+	@echo "... runTests"
+	@echo "... __/src/TcpServer.o"
+	@echo "... __/src/TcpServer.i"
+	@echo "... __/src/TcpServer.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"

@@ -1,9 +1,23 @@
 #include <gtest/gtest.h>
-// A simple test case
-TEST(ExampleTest, SimpleAssertion) {
-    EXPECT_EQ(2 + 2, 4);
-}
+#include "../include/TcpServer.h"
 
-TEST(ExampleTest, SimpleAssertion1){
-    ASSERT_TRUE(true);
-}
+
+class TcpServerTestFixture : public::testing::Test{
+public:
+
+    TcpServer* server;
+    void SetUp(){
+        // add setup code
+        server = new TcpServer(8001);
+    };
+
+    void TearDown(){
+        delete server;
+    };
+};
+
+
+// A simple test case
+TEST_F(TcpServerTestFixture, Test_Port_Number) {
+    EXPECT_EQ(server->port_num, 8001);
+};
