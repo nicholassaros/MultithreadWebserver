@@ -85,51 +85,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nicholas/OperatingSystems/MultithreadWebserver/builds/CMakeFiles /home/nicholas/OperatingSystems/MultithreadWebserver/builds//CMakeFiles/progress.marks
@@ -162,130 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named server
+# Target rules for targets named MyServer
 
 # Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server
-.PHONY : server
+MyServer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyServer
+.PHONY : MyServer
 
 # fast build rule for target.
-server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-.PHONY : server/fast
+MyServer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyServer.dir/build.make CMakeFiles/MyServer.dir/build
+.PHONY : MyServer/fast
 
-#=============================================================================
-# Target rules for targets named gmock
-
-# Build rule for target.
-gmock: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
-.PHONY : gmock
-
-# fast build rule for target.
-gmock/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
-.PHONY : gmock/fast
-
-#=============================================================================
-# Target rules for targets named gmock_main
-
-# Build rule for target.
-gmock_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
-.PHONY : gmock_main
-
-# fast build rule for target.
-gmock_main/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-.PHONY : gmock_main/fast
-
-#=============================================================================
-# Target rules for targets named gtest
-
-# Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
-
-# fast build rule for target.
-gtest/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
-
-#=============================================================================
-# Target rules for targets named gtest_main
-
-# Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
-
-# fast build rule for target.
-gtest_main/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
-
-#=============================================================================
-# Target rules for targets named runTests
-
-# Build rule for target.
-runTests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 runTests
-.PHONY : runTests
-
-# fast build rule for target.
-runTests/fast:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/runTests.dir/build.make tests/CMakeFiles/runTests.dir/build
-.PHONY : runTests/fast
-
-src/Server.o: src/Server.cpp.o
-.PHONY : src/Server.o
+src/MyServer.o: src/MyServer.cpp.o
+.PHONY : src/MyServer.o
 
 # target to build an object file
-src/Server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Server.cpp.o
-.PHONY : src/Server.cpp.o
+src/MyServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyServer.dir/build.make CMakeFiles/MyServer.dir/src/MyServer.cpp.o
+.PHONY : src/MyServer.cpp.o
 
-src/Server.i: src/Server.cpp.i
-.PHONY : src/Server.i
-
-# target to preprocess a source file
-src/Server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Server.cpp.i
-.PHONY : src/Server.cpp.i
-
-src/Server.s: src/Server.cpp.s
-.PHONY : src/Server.s
-
-# target to generate assembly for a file
-src/Server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Server.cpp.s
-.PHONY : src/Server.cpp.s
-
-src/TcpServer.o: src/TcpServer.cpp.o
-.PHONY : src/TcpServer.o
-
-# target to build an object file
-src/TcpServer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/TcpServer.cpp.o
-.PHONY : src/TcpServer.cpp.o
-
-src/TcpServer.i: src/TcpServer.cpp.i
-.PHONY : src/TcpServer.i
+src/MyServer.i: src/MyServer.cpp.i
+.PHONY : src/MyServer.i
 
 # target to preprocess a source file
-src/TcpServer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/TcpServer.cpp.i
-.PHONY : src/TcpServer.cpp.i
+src/MyServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyServer.dir/build.make CMakeFiles/MyServer.dir/src/MyServer.cpp.i
+.PHONY : src/MyServer.cpp.i
 
-src/TcpServer.s: src/TcpServer.cpp.s
-.PHONY : src/TcpServer.s
+src/MyServer.s: src/MyServer.cpp.s
+.PHONY : src/MyServer.s
 
 # target to generate assembly for a file
-src/TcpServer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/TcpServer.cpp.s
-.PHONY : src/TcpServer.cpp.s
+src/MyServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyServer.dir/build.make CMakeFiles/MyServer.dir/src/MyServer.cpp.s
+.PHONY : src/MyServer.cpp.s
 
 # Help Target
 help:
@@ -294,23 +160,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... gmock"
-	@echo "... gmock_main"
-	@echo "... gtest"
-	@echo "... gtest_main"
-	@echo "... runTests"
-	@echo "... server"
-	@echo "... src/Server.o"
-	@echo "... src/Server.i"
-	@echo "... src/Server.s"
-	@echo "... src/TcpServer.o"
-	@echo "... src/TcpServer.i"
-	@echo "... src/TcpServer.s"
+	@echo "... MyServer"
+	@echo "... src/MyServer.o"
+	@echo "... src/MyServer.i"
+	@echo "... src/MyServer.s"
 .PHONY : help
 
 
