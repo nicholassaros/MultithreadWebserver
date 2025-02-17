@@ -69,31 +69,47 @@ include CMakeFiles/MyServer.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/MyServer.dir/flags.make
 
-CMakeFiles/MyServer.dir/src/MyServer.cpp.o: CMakeFiles/MyServer.dir/flags.make
-CMakeFiles/MyServer.dir/src/MyServer.cpp.o: /home/nicholas/OperatingSystems/MultithreadWebserver/src/MyServer.cpp
-CMakeFiles/MyServer.dir/src/MyServer.cpp.o: CMakeFiles/MyServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nicholas/OperatingSystems/MultithreadWebserver/builds/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MyServer.dir/src/MyServer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyServer.dir/src/MyServer.cpp.o -MF CMakeFiles/MyServer.dir/src/MyServer.cpp.o.d -o CMakeFiles/MyServer.dir/src/MyServer.cpp.o -c /home/nicholas/OperatingSystems/MultithreadWebserver/src/MyServer.cpp
+CMakeFiles/MyServer.dir/src/SimpleServer.cpp.o: CMakeFiles/MyServer.dir/flags.make
+CMakeFiles/MyServer.dir/src/SimpleServer.cpp.o: /home/nicholas/OperatingSystems/MultithreadWebserver/src/SimpleServer.cpp
+CMakeFiles/MyServer.dir/src/SimpleServer.cpp.o: CMakeFiles/MyServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nicholas/OperatingSystems/MultithreadWebserver/builds/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MyServer.dir/src/SimpleServer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyServer.dir/src/SimpleServer.cpp.o -MF CMakeFiles/MyServer.dir/src/SimpleServer.cpp.o.d -o CMakeFiles/MyServer.dir/src/SimpleServer.cpp.o -c /home/nicholas/OperatingSystems/MultithreadWebserver/src/SimpleServer.cpp
 
-CMakeFiles/MyServer.dir/src/MyServer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyServer.dir/src/MyServer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nicholas/OperatingSystems/MultithreadWebserver/src/MyServer.cpp > CMakeFiles/MyServer.dir/src/MyServer.cpp.i
+CMakeFiles/MyServer.dir/src/SimpleServer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyServer.dir/src/SimpleServer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nicholas/OperatingSystems/MultithreadWebserver/src/SimpleServer.cpp > CMakeFiles/MyServer.dir/src/SimpleServer.cpp.i
 
-CMakeFiles/MyServer.dir/src/MyServer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyServer.dir/src/MyServer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nicholas/OperatingSystems/MultithreadWebserver/src/MyServer.cpp -o CMakeFiles/MyServer.dir/src/MyServer.cpp.s
+CMakeFiles/MyServer.dir/src/SimpleServer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyServer.dir/src/SimpleServer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nicholas/OperatingSystems/MultithreadWebserver/src/SimpleServer.cpp -o CMakeFiles/MyServer.dir/src/SimpleServer.cpp.s
+
+CMakeFiles/MyServer.dir/src/main.cpp.o: CMakeFiles/MyServer.dir/flags.make
+CMakeFiles/MyServer.dir/src/main.cpp.o: /home/nicholas/OperatingSystems/MultithreadWebserver/src/main.cpp
+CMakeFiles/MyServer.dir/src/main.cpp.o: CMakeFiles/MyServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nicholas/OperatingSystems/MultithreadWebserver/builds/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MyServer.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyServer.dir/src/main.cpp.o -MF CMakeFiles/MyServer.dir/src/main.cpp.o.d -o CMakeFiles/MyServer.dir/src/main.cpp.o -c /home/nicholas/OperatingSystems/MultithreadWebserver/src/main.cpp
+
+CMakeFiles/MyServer.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyServer.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nicholas/OperatingSystems/MultithreadWebserver/src/main.cpp > CMakeFiles/MyServer.dir/src/main.cpp.i
+
+CMakeFiles/MyServer.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyServer.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nicholas/OperatingSystems/MultithreadWebserver/src/main.cpp -o CMakeFiles/MyServer.dir/src/main.cpp.s
 
 # Object files for target MyServer
 MyServer_OBJECTS = \
-"CMakeFiles/MyServer.dir/src/MyServer.cpp.o"
+"CMakeFiles/MyServer.dir/src/SimpleServer.cpp.o" \
+"CMakeFiles/MyServer.dir/src/main.cpp.o"
 
 # External object files for target MyServer
 MyServer_EXTERNAL_OBJECTS =
 
-MyServer: CMakeFiles/MyServer.dir/src/MyServer.cpp.o
+MyServer: CMakeFiles/MyServer.dir/src/SimpleServer.cpp.o
+MyServer: CMakeFiles/MyServer.dir/src/main.cpp.o
 MyServer: CMakeFiles/MyServer.dir/build.make
 MyServer: CMakeFiles/MyServer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/nicholas/OperatingSystems/MultithreadWebserver/builds/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable MyServer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/nicholas/OperatingSystems/MultithreadWebserver/builds/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable MyServer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MyServer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

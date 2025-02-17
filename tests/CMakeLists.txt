@@ -1,10 +1,15 @@
-set(TEST_FILES ../src/TcpServer.cpp test.cpp)
+
+# Fetch Google Test
+include(FetchContent)
+FetchContent_Declare(
+    googletest
+    URL https://github.com/google/googletest/archive/refs/heads/main.zip
+)
+FetchContent_MakeAvailable(googletest)
 
 
-add_executable(runTests ${TEST_FILES})
+# Create test executable
+add_executable(my_tests mock_test.cpp)
+target_link_libraries(my_tests gtest gtest_main gmock gmock_main)
 
-target_include_directories(runTests PRIVATE ../include)
-target_link_libraries(runTests GTest::gtest_main)
-
-include(GoogleTest)
-gtest_discover_tests(runTests)
+add_test(NAME MyTests COMMAND my_tests)
