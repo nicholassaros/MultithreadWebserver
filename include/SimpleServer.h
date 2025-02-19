@@ -18,6 +18,8 @@ public:
 
     int StartServer();
 
+    int SendData(int, const char*);
+
     void ProcessClient(int);
 
     HTTPS_REQUEST HandleRequest(int);

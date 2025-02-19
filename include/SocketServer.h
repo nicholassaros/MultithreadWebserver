@@ -58,7 +58,7 @@ public:
     }
 
     int socketSend(int clientSocket, const char* message) override {
-        return send(clientSocket, message, sizeof(message), 0);
+        return send(clientSocket, message, strlen(message), 0);
     }
 
     int socketReceive(int clientSocket, char* message) override {

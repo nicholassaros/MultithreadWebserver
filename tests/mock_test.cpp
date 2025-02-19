@@ -36,4 +36,5 @@ TEST(MockSocketServer, TestSetupServer) {
 
 
     EXPECT_EQ(server.SetupServer(), 0);
-}
+};
+

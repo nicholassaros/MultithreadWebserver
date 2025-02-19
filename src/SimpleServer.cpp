@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <thread>
 
 
 using namespace std;
@@ -52,30 +53,45 @@ int SimpleServer::StartServer(){
             continue;
         }
 
-        cout << "Connection accepted! Processing request... \n";
-        ProcessClient(clientSock);
-        cout << "Finished processing request! \n";            
+        cout << "Connection accepted! Processing request! Creating new thread... \n";
+
+        //ProcessClient(clientSock);
+        thread clientThread(&SimpleServer::ProcessClient, this, clientSock);
+        clientThread.detach();
     }
+
     return 0;
 };
 
 
+int SimpleServer::SendData(int clientSock, const char* data){
+    if(server.socketSend(clientSock, data) < 0){
+        perror("Failed to send response");
+        return 1;
+    }
+    cout << "Sent response successfully";
+    return 0;
+}
+
+
 void SimpleServer::ProcessClient(int clientSock){
 // calls helper functions to process the clients request
+        sleep(5);
 
-        // calls handleRequest
-        HTTPS_REQUEST request = HandleRequest(clientSock);
-
-        // calls handleResponse
         HTTPS_RESPONSE response;
+        HTTPS_REQUEST request = HandleRequest(clientSock);
         HandleResponse(request, response);
 
         // takes response and parses into buffer
         string serializedData = SerializeResponse(response);
-        if(server.socketSend(clientSock, serializedData.c_str()) < 0){
-            perror("Failed to send response");
+        
+
+        if(SendData(clientSock, serializedData.c_str()) < 0){
+            cout << "Finished client request, ERROR!" << endl;
+        } else {
+            cout << "Finished client request, SUCCESS!" << endl;
         }
-};
+}
 
 
 HTTPS_REQUEST SimpleServer::HandleRequest(int clientSock){
@@ -93,12 +109,14 @@ HTTPS_REQUEST SimpleServer::HandleRequest(int clientSock){
 void SimpleServer::HandleResponse(HTTPS_REQUEST& request, HTTPS_RESPONSE& response){
     // parses request object and returns a response object
 
-    if(request.path != ""){
-        response.content = ReadFile("../RETURN_ME.JSON");
+    if(request.method == "GET"){
+        response.content = ReadFile(request.path);
+        response.content_length = response.content.size();
+        response.content_type = "JSON";
+        response.status = "OK";
+        response.status_code = 200;
+        response.method = "GET";
     }
-
-    response.status = "OK";
-    response.status_code = 200;
 };
 
 

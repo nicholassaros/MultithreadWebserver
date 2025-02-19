@@ -35,7 +35,7 @@ struct HTTPS_RESPONSE {
     string status;
     int status_code;
     string content_type;
-    string content_length;
+    int content_length;
     string content;
 };
 
