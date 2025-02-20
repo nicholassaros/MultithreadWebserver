@@ -121,6 +121,7 @@ void SimpleServer::HandleResponse(HTTPS_REQUEST& request, HTTPS_RESPONSE& respon
 
 
 string SimpleServer::ReadFile(const string& fileName){
+    cout << "Fetching file: " << fileName << endl;
     ifstream file(fileName);
 
     if(!file){

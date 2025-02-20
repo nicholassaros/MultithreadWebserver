@@ -30,7 +30,7 @@ int main(){
 
 
 
-    const char* message = "GET /users/data v0.3";
+    const char* message = "GET /home/nicholas/OperatingSystems/MultithreadWebserver/RETURN_ME.json v0.3";
     ssize_t bytesSent = send(sock, message, strlen(message), 0);
     if(bytesSent < 0){
         perror("Error on send");
